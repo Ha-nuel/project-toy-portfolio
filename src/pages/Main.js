@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import useTimer from '../hooks/useTimer';
 
 import Intro from '../components/Main/Intro';
+import IntroSection from '../components/Main/IntroSection';
 
 export default function Main() {
   const { startTimer, timeIsOver } = useTimer(2000);
@@ -16,7 +17,7 @@ export default function Main() {
     <MainPage>
       {timeIsOver ? (
         <>
-          <Section></Section>
+          <IntroSection />
           <Section>소개</Section>
           <Section>프로젝트</Section>
           <Section>마지막</Section>
