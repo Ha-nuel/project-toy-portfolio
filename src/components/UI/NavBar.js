@@ -1,48 +1,11 @@
-import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { UserContext } from '../../App';
-import GeneralContext from '../../context/GeneralContext';
-
-import UserIcon from './UserIcon';
-
 export default function NavBar() {
-  const userContext = useContext(UserContext);
-  const generalContext = useContext(GeneralContext);
-
-  const navigate = useNavigate();
-
-  const LoginCheck = () => {
-    if (userContext.user) {
-      return (
-        <>
-          <CreateButton onClick={() => navigate('/items')}>
-            상품 등록
-          </CreateButton>
-          <UserIcon />
-        </>
-      );
-    }
-
-    return (
-      <>
-        <ListElement onClick={generalContext.loginFormHandler}>
-          로그인
-        </ListElement>
-        <StartButton onClick={generalContext.registerFormHandler}>
-          시작하기
-        </StartButton>
-      </>
-    );
-  };
-
   return (
     <Nav>
       <NavList>
-        <ListElement onClick={() => navigate('/about')}>소개</ListElement>
-        <ListElement onClick={() => navigate('/')}>마켓</ListElement>
-        <LoginCheck />
+        <ListElement>소개</ListElement>
+        <ListElement>마켓</ListElement>
       </NavList>
     </Nav>
   );
@@ -79,8 +42,4 @@ const StartButton = styled(ListElement)`
   border: #77bb3f 1px solid;
   border-radius: 20px;
   margin-right: 3rem;
-`;
-
-const CreateButton = styled(StartButton)`
-  margin-right: 2rem;
 `;
