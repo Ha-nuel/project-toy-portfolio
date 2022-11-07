@@ -3,18 +3,10 @@ import styled from 'styled-components';
 export default function Main() {
   return (
     <>
-      <nav>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </nav>
-      <Section></Section>
-      <Section></Section>
-      <Section></Section>
-      <Section></Section>
+      <Section>환영합니다!</Section>
+      <Section>소개</Section>
+      <Section>프로젝트</Section>
+      <Section>마지막</Section>
     </>
   );
 }
