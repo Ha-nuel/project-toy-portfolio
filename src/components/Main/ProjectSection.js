@@ -1,6 +1,27 @@
+import { useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 
+import useSlide from '../../hooks/useSlide';
+
+const projects = [
+  {
+    name: '엘리스 웹 프로젝트',
+    description: '웹 프로젝트를 했습니다.',
+  },
+  {
+    name: '엘리스 데이터 프로젝트',
+    description: '데이터 프로젝트를 했습니다.',
+  },
+];
+
 export default function ProjectSection({ focus }) {
+  const { count, setCount, startInterval, leftBtnHandler, rightBtnHandler } =
+    useSlide();
+
+  useEffect(() => {
+    startInterval();
+  }, []);
+
   return (
     <ProjectSectionStyle focus={focus}>
       <section>
