@@ -1,53 +1,60 @@
-import { useContext } from "react";
-
-import { UserContext } from "../../App";
-import GeneralContext from "../../context/GeneralContext";
-
-import NavBar from "./NavBar";
-import Logo from "./Logo";
-import LoginForm from "../User/LoginForm";
-import RegisterForm from "../User/RegisterForm";
-import DeleteForm from "../User/DeleteForm";
-import EditForm from "../User/EditForm";
-import UserForm from "../User/UserForm";
-
-import styled from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 export default function Header() {
-  const userContext = useContext(UserContext);
-  const generalContext = useContext(GeneralContext);
-
-  const FormCheck = () => {
-    if (generalContext.showLoginForm) {
-      return <LoginForm />;
-    } else if (generalContext.showRegisterForm) {
-      return <RegisterForm />;
-    } else if (generalContext.showEditForm) {
-      return <EditForm />;
-    } else if (generalContext.showDeleteForm) {
-      return <DeleteForm />;
-    } else if (generalContext.showUserForm) {
-      return <UserForm />;
-    }
-  };
-
   return (
-    !userContext.isLoading && (
-      <>
-        <FormCheck />
-        <HeaderStyle>
-          <Logo />
-          <NavBar />
-        </HeaderStyle>
-      </>
-    )
+    <HeaderStyle>
+      <div></div>
+      <nav>
+        <ul>
+          <li>인사</li>
+          <li>소개</li>
+          <li>프로젝트</li>
+          <li>끝으로</li>
+        </ul>
+      </nav>
+    </HeaderStyle>
   );
 }
 
-const HeaderStyle = styled.header`
+const FadeIn = keyframes`
+  0% {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+`;
+
+const HeaderStyle = styled.div`
   height: 10vh;
-  font-size: 1.25rem;
+  width: 100%;
+
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+
+  animation: ${FadeIn} 2s;
+
+  div {
+    width: 100%;
+    height: 100%;
+  }
+
+  nav {
+    width: 100%;
+    height: 100%;
+  }
+
+  ul {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  li {
+    list-style: none;
+    margin-right: 6rem;
+  }
 `;
