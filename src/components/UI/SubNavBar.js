@@ -58,7 +58,13 @@ const SubNav = styled.ul`
   }
 
   li {
-    margin-right: 3rem;
+    margin-right: 2rem;
+  }
+
+  button {
+    border-radius: 20px;
+    border: gray 1px solid;
+    padding: 0.2rem 1rem;
   }
 
   ${({ focus }) =>

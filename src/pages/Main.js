@@ -29,7 +29,10 @@ export default function Main() {
       {timeIsOver ? (
         <>
           <Header />
-          <SubNavBar focus={currentSection !== 1} />
+          <SubNavBar
+            focus={currentSection !== 1}
+            currentSection={currentSection}
+          />
           <IntroSection focus={currentSection === 1} />
           <AboutSection focus={currentSection === 2} />
           <ProjectSection focus={currentSection === 3} />
