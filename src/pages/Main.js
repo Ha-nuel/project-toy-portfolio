@@ -6,11 +6,12 @@ import useDivideSection from '../hooks/useDivideSection';
 
 import Intro from '../components/Main/Intro';
 import Header from '../components/UI/Header';
+import SubNavBar from '../components/UI/SubNavBar';
 import IntroSection from '../components/Main/IntroSection';
 import AboutSection from '../components/Main/AboutSection';
 import ProjectSection from '../components/Main/ProjectSection';
 import GoodbyeSection from '../components/Main/GoodbyeSection';
-import SubNavBar from '../components/UI/SubNavBar';
+import Footer from '../components/UI/Footer';
 
 export default function Main() {
   const { startTimer, timeIsOver } = useTimer(2000);
@@ -28,11 +29,15 @@ export default function Main() {
       {timeIsOver ? (
         <>
           <Header />
-          <SubNavBar focus={currentSection !== 1} />
+          <SubNavBar
+            focus={currentSection !== 1}
+            currentSection={currentSection}
+          />
           <IntroSection focus={currentSection === 1} />
           <AboutSection focus={currentSection === 2} />
           <ProjectSection focus={currentSection === 3} />
           <GoodbyeSection focus={currentSection === 4} />
+          <Footer />
         </>
       ) : (
         <Intro />

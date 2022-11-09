@@ -6,5 +6,6 @@ export default function Footer() {
 
 const FooterStyle = styled.footer`
   height: 20vh;
+  width: 100%;
   background-color: lightgray;
 `;

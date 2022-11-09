@@ -25,10 +25,15 @@ export default function ProjectSection({ focus }) {
   return (
     <ProjectSectionStyle focus={focus}>
       <section>
-        <div>이하늘</div>
-      </section>
-      <section>
-        <div>hi</div>
+        {projects.map((project, index) => {
+          return (
+            <div key={'project' + index}>
+              <div>{project.name}</div>
+              <div>{project.description}</div>
+            </div>
+          );
+        })}
+        <button></button>
       </section>
     </ProjectSectionStyle>
   );
@@ -67,6 +72,14 @@ const ProjectSectionStyle = styled.div`
 
     height: 100%;
     width: 100%;
+  }
+
+  button {
+    border-radius: 50%;
+    border: gray 1px solid;
+    background-color: transparent;
+    width: 1rem;
+    height: 1rem;
   }
 
   ${({ focus }) =>
