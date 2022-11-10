@@ -1,19 +1,9 @@
+import React from 'react';
 import { useContext } from 'react';
 import styled from 'styled-components';
 
-import GeneralContext from '../../context/GeneralContext';
-
 export default function ModalBackground() {
-  const generalContext = useContext(GeneralContext);
-
-  return (
-    <ModalStyle
-      onClick={() => {
-        generalContext.disableFormHandler();
-        generalContext.disableUserFormHandler();
-      }}
-    ></ModalStyle>
-  );
+  return <ModalStyle></ModalStyle>;
 }
 
 const ModalStyle = styled.div`
