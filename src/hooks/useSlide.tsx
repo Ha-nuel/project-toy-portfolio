@@ -5,7 +5,7 @@ export default function useSlide(TIME = 1000, startNum = 1, endNum = 2) {
   const end = endNum - 1;
 
   const [count, setCount] = useState(start);
-  const intervalRef = useRef(null);
+  const intervalRef = useRef<number>(0);
 
   const leftBtnHandler = () => {
     setCount((prevState) => (prevState === start ? end : prevState - 1));
@@ -23,7 +23,7 @@ export default function useSlide(TIME = 1000, startNum = 1, endNum = 2) {
     intervalRef.current = setInterval(() => {
       setCount((prevState) => (prevState === end ? start : prevState + 1));
     }, TIME);
-  });
+  }, []);
 
   return { count, setCount, startInterval, leftBtnHandler, rightBtnHandler };
 }

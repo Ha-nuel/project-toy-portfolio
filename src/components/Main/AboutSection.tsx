@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
 
 export default function AboutSection({ focus }) {
