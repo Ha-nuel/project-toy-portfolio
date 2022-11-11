@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-//////// 너무 About.js 코드가 길어져서 일단 분리함, 아직 재사용성 고려해서 리팩토링 안함
-
 export default function useDivideSection(divide = 2) {
   const [currentSection, setCurrentSection] = useState(1);
 

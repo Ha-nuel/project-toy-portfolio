@@ -5,10 +5,7 @@ export default function GoodbyeSection({ focus }) {
   return (
     <GoodbyeSectionStyle focus={focus}>
       <section>
-        <div>이하늘</div>
-      </section>
-      <section>
-        <div>hi</div>
+        <div>부족한 제 포트폴리오 사이트를 봐주셔서 감사합니다.</div>
       </section>
     </GoodbyeSectionStyle>
   );

@@ -5,20 +5,14 @@ export default function AboutSection({ focus }) {
   return (
     <AboutSectionStyle focus={focus}>
       <section>
-        <div>어쩌구</div>
+        <div>소개</div>
       </section>
       <section>
-        <div>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </div>
+        <ul>
+          <li>정보통신과 졸업</li>
+          <li>엘리스 AI 트랙 수료</li>
+          <li>웹 서비스 프로젝트 대상</li>
+        </ul>
       </section>
     </AboutSectionStyle>
   );
