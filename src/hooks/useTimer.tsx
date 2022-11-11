@@ -1,13 +1,13 @@
 import { useState, useRef } from 'react';
 
-export default function useTimer(time) {
+export default function useTimer(time: number) {
   const [timeIsOver, setTimeIsOver] = useState(false);
-  const timerRef = useRef();
+  const timerRef = useRef<number>(0);
 
   const startTimer = () => {
     if (timerRef.current !== null) {
       clearTimeout(timerRef.current);
-      timerRef.current = null;
+      timerRef.current = 0;
       return;
     }
 
