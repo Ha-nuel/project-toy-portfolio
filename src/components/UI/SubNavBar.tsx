@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
 
-export default function SubNavBar({ focus }) {
+export default function SubNavBar({ focus: boolean, currentSection: number }) {
   return (
     <SubNav focus={focus}>
       <li>
